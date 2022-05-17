@@ -89,9 +89,9 @@
                             <p>{{ this.error.border }}</p>
                         </v-col>
                         <v-col cols="12" sm="8" class="py-0 px-0">
-                            <router-link class="text-decoration-none" v-for="(border, i) in borders" :key="i" :to="'/country/'+border.alpha2Code">
+                            <a class="text-decoration-none" v-for="(border, i) in borders" :key="i" :href="'/country/'+border.alpha2Code">
                                 <v-btn small class="button my-2 text-capitalize px-4 ma-2">{{ border.name }}</v-btn>
-                            </router-link>
+                            </a>
                         </v-col>
                     </v-row>
                 </v-col>
