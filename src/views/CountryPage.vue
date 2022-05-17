@@ -146,14 +146,18 @@
             currencies(){
                 if(this.country){
                     let currencies = this.country.currencies
-                    let currenciesName = []
-                    let currenciesLength = currencies.length
+                    if(currencies) {
+                        let currenciesName = []
+                        let currenciesLength = currencies.length
 
-                    for (let i = 0; i < currenciesLength; i++ ){
-                        currenciesName.push ( currencies[i]['name'] );
+                        for (let i = 0; i < currenciesLength; i++) {
+                            currenciesName.push(currencies[i]['name']);
+                        }
+
+                        return currenciesName.join(', ')
+                    }else {
+                        return 'No data available'
                     }
-
-                    return currenciesName.join(', ')
                 }else {
                     return null
                 }
@@ -161,14 +165,18 @@
             languages(){
                 if(this.country){
                     let languages = this.country.languages
-                    let languagesName = []
-                    let languagesLength = languages.length
+                    if (languages) {
+                        let languagesName = []
+                        let languagesLength = languages.length
 
-                    for (let i = 0; i < languagesLength; i++ ){
-                        languagesName.push ( languages[i]['name'] );
+                        for (let i = 0; i < languagesLength; i++) {
+                            languagesName.push(languages[i]['name']);
+                        }
+
+                        return languagesName.join(', ')
+                    }else {
+                        return 'No data available'
                     }
-
-                    return languagesName.join(', ')
                 }else {
                     return null
                 }
